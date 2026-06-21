@@ -78,6 +78,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             Text = "LabPulse";
+            Load += Form1_Load;
             ResumeLayout(false);
         }
 
