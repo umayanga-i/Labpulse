@@ -74,6 +74,30 @@ namespace LabPulse
         {
 
         }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            // 1. Initialize and display the main welcome/entry screen
+            Form1 welcomeScreen = new Form1();
+            welcomeScreen.Show();
+
+            // 2. Clear out the hidden background dashboard so it isn't left hanging in memory
+            if (this.parentDashboard != null)
+            {
+                // Unregister the FormClosed event temporarily so it doesn't try to reopen the dashboard
+                this.FormClosed -= profile_FormClosed;
+
+                this.parentDashboard.Close(); // Closes the underlying dashboard safely
+            }
+
+            // 3. Close the profile page itself
+            this.Close();
+        }
     }
 }
 
