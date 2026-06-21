@@ -29,9 +29,16 @@
         private void InitializeComponent()
         {
             pnlSidebar = new Panel();
-            lblBrand = new Label();
-            label1 = new Label();
-            btnCatalog = new Button();
+            textBox6 = new TextBox();
+            btnLogout = new Button();
+            textBox5 = new TextBox();
+            textBox4 = new TextBox();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
+            btnProfile = new Button();
+            btnRules = new Button();
+            btnHistory = new Button();
             btnReservation = new Button();
             btnCatalog = new Button();
             label1 = new Label();
@@ -79,46 +86,60 @@
             textBox6.TabIndex = 11;
             textBox6.Text = "🚪";
             // 
-            // label1
+            // btnLogout
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(255, 128, 0);
-            label1.Location = new Point(0, 24);
-            label1.Name = "label1";
-            label1.Size = new Size(53, 31);
-            label1.TabIndex = 1;
-            label1.Text = "⚡ ";
+            btnLogout.BackColor = Color.FromArgb(30, 41, 59);
+            btnLogout.FlatAppearance.BorderSize = 0;
+            btnLogout.FlatAppearance.MouseOverBackColor = Color.FromArgb(50, 30, 40);
+            btnLogout.FlatStyle = FlatStyle.Flat;
+            btnLogout.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLogout.ForeColor = Color.FromArgb(248, 113, 113);
+            btnLogout.Location = new Point(37, 513);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(94, 32);
+            btnLogout.TabIndex = 1;
+            btnLogout.Text = "Log Out";
+            btnLogout.UseVisualStyleBackColor = false;
+            btnLogout.Click += btnLogout_Click;
             // 
-            // btnCatalog
+            // textBox5
             // 
-            btnCatalog.FlatAppearance.BorderSize = 0;
-            btnCatalog.FlatAppearance.MouseOverBackColor = Color.FromArgb(43, 57, 78);
-            btnCatalog.FlatStyle = FlatStyle.Flat;
-            btnCatalog.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCatalog.ForeColor = Color.FromArgb(148, 163, 184);
-            btnCatalog.Location = new Point(37, 94);
-            btnCatalog.Name = "btnCatalog";
-            btnCatalog.Size = new Size(220, 45);
-            btnCatalog.TabIndex = 2;
-            btnCatalog.Text = "Equipment Catalog";
-            btnCatalog.TextAlign = ContentAlignment.MiddleLeft;
-            btnCatalog.UseVisualStyleBackColor = true;
+            textBox5.BackColor = Color.FromArgb(30, 41, 59);
+            textBox5.BorderStyle = BorderStyle.None;
+            textBox5.Font = new Font("Segoe UI Emoji", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox5.ForeColor = Color.FromArgb(0, 0, 64);
+            textBox5.Location = new Point(3, 438);
+            textBox5.Name = "textBox5";
+            textBox5.ReadOnly = true;
+            textBox5.Size = new Size(38, 31);
+            textBox5.TabIndex = 10;
+            textBox5.Text = "👤";
             // 
-            // btnReservation
+            // textBox4
             // 
-            btnReservation.FlatAppearance.BorderSize = 0;
-            btnReservation.FlatAppearance.MouseOverBackColor = Color.FromArgb(43, 57, 78);
-            btnReservation.FlatStyle = FlatStyle.Flat;
-            btnReservation.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnReservation.ForeColor = Color.FromArgb(148, 163, 184);
-            btnReservation.Location = new Point(37, 177);
-            btnReservation.Name = "btnReservation";
-            btnReservation.Size = new Size(220, 45);
-            btnReservation.TabIndex = 3;
-            btnReservation.Text = "New Reservation";
-            btnReservation.TextAlign = ContentAlignment.MiddleLeft;
-            btnReservation.UseVisualStyleBackColor = true;
+            textBox4.BackColor = Color.FromArgb(30, 41, 59);
+            textBox4.BorderStyle = BorderStyle.None;
+            textBox4.Font = new Font("Segoe UI Emoji", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox4.ForeColor = Color.Silver;
+            textBox4.Location = new Point(0, 348);
+            textBox4.Name = "textBox4";
+            textBox4.ReadOnly = true;
+            textBox4.Size = new Size(38, 31);
+            textBox4.TabIndex = 9;
+            textBox4.Text = "📋";
+            // 
+            // textBox3
+            // 
+            textBox3.BackColor = Color.FromArgb(30, 41, 59);
+            textBox3.BorderStyle = BorderStyle.None;
+            textBox3.Font = new Font("Segoe UI Emoji", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox3.ForeColor = Color.FromArgb(255, 255, 128);
+            textBox3.Location = new Point(0, 259);
+            textBox3.Name = "textBox3";
+            textBox3.ReadOnly = true;
+            textBox3.Size = new Size(38, 31);
+            textBox3.TabIndex = 8;
+            textBox3.Text = "📜";
             // 
             // textBox2
             // 
@@ -164,83 +185,77 @@
             // 
             // btnRules
             // 
-            textBox1.BackColor = Color.FromArgb(30, 41, 59);
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Segoe UI Emoji", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.ForeColor = Color.White;
-            textBox1.Location = new Point(3, 99);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(38, 31);
-            textBox1.TabIndex = 1;
-            textBox1.Text = "🔬";
+            btnRules.FlatAppearance.BorderSize = 0;
+            btnRules.FlatAppearance.MouseOverBackColor = Color.FromArgb(43, 57, 78);
+            btnRules.FlatStyle = FlatStyle.Flat;
+            btnRules.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnRules.ForeColor = Color.FromArgb(148, 163, 184);
+            btnRules.Location = new Point(37, 343);
+            btnRules.Name = "btnRules";
+            btnRules.Size = new Size(220, 45);
+            btnRules.TabIndex = 5;
+            btnRules.Text = "Lab Rules and Times";
+            btnRules.TextAlign = ContentAlignment.MiddleLeft;
+            btnRules.UseVisualStyleBackColor = true;
+            btnRules.Click += btnRules_Click;
             // 
             // btnHistory
             // 
-            textBox2.BackColor = Color.FromArgb(30, 41, 59);
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Font = new Font("Segoe UI Emoji", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.ForeColor = Color.FromArgb(192, 255, 255);
-            textBox2.Location = new Point(3, 182);
-            textBox2.Name = "textBox2";
-            textBox2.ReadOnly = true;
-            textBox2.Size = new Size(38, 31);
-            textBox2.TabIndex = 7;
-            textBox2.Text = "📅";
+            btnHistory.FlatAppearance.BorderSize = 0;
+            btnHistory.FlatAppearance.MouseOverBackColor = Color.FromArgb(43, 57, 78);
+            btnHistory.FlatStyle = FlatStyle.Flat;
+            btnHistory.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnHistory.ForeColor = Color.FromArgb(148, 163, 184);
+            btnHistory.Location = new Point(37, 254);
+            btnHistory.Name = "btnHistory";
+            btnHistory.Size = new Size(220, 45);
+            btnHistory.TabIndex = 4;
+            btnHistory.Text = "Booking History";
+            btnHistory.TextAlign = ContentAlignment.MiddleLeft;
+            btnHistory.UseVisualStyleBackColor = true;
+            btnHistory.Click += btnHistory_Click;
             // 
-            // textBox3
+            // btnReservation
             // 
-            textBox3.BackColor = Color.FromArgb(30, 41, 59);
-            textBox3.BorderStyle = BorderStyle.None;
-            textBox3.Font = new Font("Segoe UI Emoji", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.ForeColor = Color.FromArgb(255, 255, 128);
-            textBox3.Location = new Point(0, 259);
-            textBox3.Name = "textBox3";
-            textBox3.ReadOnly = true;
-            textBox3.Size = new Size(38, 31);
-            textBox3.TabIndex = 8;
-            textBox3.Text = "📜";
+            btnReservation.FlatAppearance.BorderSize = 0;
+            btnReservation.FlatAppearance.MouseOverBackColor = Color.FromArgb(43, 57, 78);
+            btnReservation.FlatStyle = FlatStyle.Flat;
+            btnReservation.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnReservation.ForeColor = Color.FromArgb(148, 163, 184);
+            btnReservation.Location = new Point(37, 177);
+            btnReservation.Name = "btnReservation";
+            btnReservation.Size = new Size(220, 45);
+            btnReservation.TabIndex = 3;
+            btnReservation.Text = "New Reservation";
+            btnReservation.TextAlign = ContentAlignment.MiddleLeft;
+            btnReservation.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // btnCatalog
             // 
-            textBox4.BackColor = Color.FromArgb(30, 41, 59);
-            textBox4.BorderStyle = BorderStyle.None;
-            textBox4.Font = new Font("Segoe UI Emoji", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox4.ForeColor = Color.Silver;
-            textBox4.Location = new Point(0, 348);
-            textBox4.Name = "textBox4";
-            textBox4.ReadOnly = true;
-            textBox4.Size = new Size(38, 31);
-            textBox4.TabIndex = 9;
-            textBox4.Text = "📋";
+            btnCatalog.FlatAppearance.BorderSize = 0;
+            btnCatalog.FlatAppearance.MouseOverBackColor = Color.FromArgb(43, 57, 78);
+            btnCatalog.FlatStyle = FlatStyle.Flat;
+            btnCatalog.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCatalog.ForeColor = Color.FromArgb(148, 163, 184);
+            btnCatalog.Location = new Point(37, 94);
+            btnCatalog.Name = "btnCatalog";
+            btnCatalog.Size = new Size(220, 45);
+            btnCatalog.TabIndex = 2;
+            btnCatalog.Text = "Equipment Catalog";
+            btnCatalog.TextAlign = ContentAlignment.MiddleLeft;
+            btnCatalog.UseVisualStyleBackColor = true;
+            btnCatalog.Click += btnCatalog_Click;
             // 
-            // textBox5
+            // label1
             // 
-            textBox5.BackColor = Color.FromArgb(30, 41, 59);
-            textBox5.BorderStyle = BorderStyle.None;
-            textBox5.Font = new Font("Segoe UI Emoji", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox5.ForeColor = Color.FromArgb(0, 0, 64);
-            textBox5.Location = new Point(3, 438);
-            textBox5.Name = "textBox5";
-            textBox5.ReadOnly = true;
-            textBox5.Size = new Size(38, 31);
-            textBox5.TabIndex = 10;
-            textBox5.Text = "👤";
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(30, 41, 59);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(50, 30, 40);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.FromArgb(248, 113, 113);
-            button1.Location = new Point(37, 513);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 32);
-            button1.TabIndex = 1;
-            button1.Text = "Log Out";
-            button1.UseVisualStyleBackColor = false;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(255, 128, 0);
+            label1.Location = new Point(0, 24);
+            label1.Name = "label1";
+            label1.Size = new Size(53, 31);
+            label1.TabIndex = 1;
+            label1.Text = "⚡ ";
             // 
             // lblBrand
             // 
