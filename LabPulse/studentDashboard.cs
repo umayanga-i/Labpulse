@@ -10,9 +10,16 @@ namespace LabPulse
 {
     public partial class studentDashboard : Form
     {
+        private string dbName;
+
         public studentDashboard()
         {
             InitializeComponent();
+        }
+
+        public studentDashboard(string dbName)
+        {
+            this.dbName = dbName;
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
