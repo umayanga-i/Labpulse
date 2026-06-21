@@ -123,9 +123,10 @@
             label1.ForeColor = Color.FromArgb(255, 192, 255);
             label1.Location = new Point(189, 14);
             label1.Name = "label1";
-            label1.Size = new Size(511, 38);
+            label1.Size = new Size(503, 38);
             label1.TabIndex = 4;
-            label1.Text = "Welcome to the Student Dashboard ! ";
+            label1.Text = "Welcometo the Student Dashboard ! ";
+            label1.Click += label1_Click;
             // 
             // pictureBox2
             // 
