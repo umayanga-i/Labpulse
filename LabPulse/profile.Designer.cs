@@ -33,8 +33,12 @@ namespace LabPulse
             pictureusertype = new PictureBox();
             linkLabel2 = new LinkLabel();
             panel1 = new Panel();
+            label5 = new Label();
+            lblBrand = new Label();
             lblname = new Label();
             lblRol = new Label();
+            linkLabel1 = new LinkLabel();
+            pictureBox2 = new PictureBox();
             checkBoxEdit = new CheckBox();
             label1 = new Label();
             label2 = new Label();
@@ -49,14 +53,16 @@ namespace LabPulse
             ConfpassLab = new Label();
             txtnewpass = new TextBox();
             txtcompass = new TextBox();
-            showpasscheck = new CheckBox();
+            checkBoxShowPassword = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)pictureusertype).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // pictureusertype
             // 
-            pictureusertype.Location = new Point(61, 54);
+            pictureusertype.Image = (Image)resources.GetObject("pictureusertype.Image");
+            pictureusertype.Location = new Point(61, 186);
             pictureusertype.Name = "pictureusertype";
             pictureusertype.Size = new Size(117, 148);
             pictureusertype.SizeMode = PictureBoxSizeMode.Zoom;
@@ -76,21 +82,50 @@ namespace LabPulse
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(64, 64, 64);
+            panel1.BackColor = Color.FromArgb(30, 41, 59);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(lblBrand);
             panel1.Controls.Add(lblname);
             panel1.Controls.Add(lblRol);
             panel1.Controls.Add(pictureusertype);
+            panel1.Controls.Add(linkLabel1);
+            panel1.Controls.Add(pictureBox2);
             panel1.Location = new Point(2, 3);
             panel1.Name = "panel1";
             panel1.Size = new Size(280, 537);
             panel1.TabIndex = 5;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.FromArgb(255, 128, 0);
+            label5.Location = new Point(10, 21);
+            label5.Name = "label5";
+            label5.Size = new Size(53, 31);
+            label5.TabIndex = 17;
+            label5.Text = "⚡ ";
+            // 
+            // lblBrand
+            // 
+            lblBrand.AutoSize = true;
+            lblBrand.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblBrand.ForeColor = Color.FromArgb(56, 189, 248);
+            lblBrand.ImageAlign = ContentAlignment.MiddleRight;
+            lblBrand.Location = new Point(68, 21);
+            lblBrand.Name = "lblBrand";
+            lblBrand.Size = new Size(109, 31);
+            lblBrand.TabIndex = 16;
+            lblBrand.Text = "LabPulse";
+            // 
             // lblname
             // 
             lblname.AutoSize = true;
-            lblname.Location = new Point(86, 257);
+            lblname.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblname.ForeColor = Color.White;
+            lblname.Location = new Point(94, 356);
             lblname.Name = "lblname";
-            lblname.Size = new Size(49, 20);
+            lblname.Size = new Size(68, 28);
             lblname.TabIndex = 15;
             lblname.Text = "Name";
             lblname.TextAlign = ContentAlignment.MiddleCenter;
@@ -98,21 +133,48 @@ namespace LabPulse
             // lblRol
             // 
             lblRol.AutoSize = true;
-            lblRol.Location = new Point(93, 225);
+            lblRol.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            lblRol.ForeColor = Color.FromArgb(56, 189, 248);
+            lblRol.Location = new Point(174, 21);
             lblRol.Name = "lblRol";
-            lblRol.Size = new Size(39, 20);
+            lblRol.Size = new Size(61, 31);
             lblRol.TabIndex = 7;
             lblRol.Text = "Role";
+            // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.LinkColor = Color.White;
+            linkLabel1.Location = new Point(43, 502);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(40, 20);
+            linkLabel1.TabIndex = 1;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Back";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(26, 505);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(20, 17);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 2;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // checkBoxEdit
             // 
             checkBoxEdit.AutoSize = true;
+            checkBoxEdit.BackColor = SystemColors.ActiveCaption;
             checkBoxEdit.Location = new Point(621, 81);
             checkBoxEdit.Name = "checkBoxEdit";
             checkBoxEdit.Size = new Size(57, 24);
             checkBoxEdit.TabIndex = 3;
             checkBoxEdit.Text = "Edit";
-            checkBoxEdit.UseVisualStyleBackColor = true;
+            checkBoxEdit.UseVisualStyleBackColor = false;
+            checkBoxEdit.CheckedChanged += checkBoxEdit_CheckedChanged;
             // 
             // label1
             // 
@@ -186,6 +248,7 @@ namespace LabPulse
             btnsubmit.TabIndex = 14;
             btnsubmit.Text = "Submit";
             btnsubmit.UseVisualStyleBackColor = true;
+            btnsubmit.Click += btnsubmit_Click;
             // 
             // newpassLab
             // 
@@ -222,23 +285,24 @@ namespace LabPulse
             txtcompass.Size = new Size(247, 27);
             txtcompass.TabIndex = 18;
             // 
-            // showpasscheck
+            // checkBoxShowPassword
             // 
-            showpasscheck.AutoSize = true;
-            showpasscheck.Location = new Point(431, 446);
-            showpasscheck.Name = "showpasscheck";
-            showpasscheck.Size = new Size(132, 24);
-            showpasscheck.TabIndex = 19;
-            showpasscheck.Text = "Show Password";
-            showpasscheck.UseVisualStyleBackColor = true;
+            checkBoxShowPassword.AutoSize = true;
+            checkBoxShowPassword.Location = new Point(431, 446);
+            checkBoxShowPassword.Name = "checkBoxShowPassword";
+            checkBoxShowPassword.Size = new Size(132, 24);
+            checkBoxShowPassword.TabIndex = 19;
+            checkBoxShowPassword.Text = "Show Password";
+            checkBoxShowPassword.UseVisualStyleBackColor = true;
+            checkBoxShowPassword.CheckedChanged += checkBoxShowPassword_CheckedChanged;
             // 
             // profile
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.DimGray;
+            BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(685, 537);
-            Controls.Add(showpasscheck);
+            Controls.Add(checkBoxShowPassword);
             Controls.Add(txtcompass);
             Controls.Add(txtnewpass);
             Controls.Add(ConfpassLab);
@@ -264,6 +328,7 @@ namespace LabPulse
             ((System.ComponentModel.ISupportInitialize)pictureusertype).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -289,7 +354,11 @@ namespace LabPulse
         private Label ConfpassLab;
         private TextBox txtnewpass;
         private TextBox txtcompass;
-        private CheckBox showpasscheck;
+        private CheckBox checkBoxShowPassword;
+        private Label label5;
+        private Label lblBrand;
+        private LinkLabel linkLabel1;
+        private PictureBox pictureBox2;
     }
 
 }
