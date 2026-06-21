@@ -62,7 +62,22 @@ namespace LabPulse
 
         private void btnCatalog_Click(object sender, EventArgs e)
         {
-            DisplaySubForm(new FrmEquipmentCatalog());
+            if (pnlContent.Controls.Count > 0)
+            {
+                pnlContent.Controls.Clear();
+            }
+
+            // 2. Create the catalog form instance
+            FrmEquipmentCatalog childForm = new FrmEquipmentCatalog();
+
+            // 3. Configure it cleanly to act as a child control inside your panel container
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+
+            // 4. Inject it into the panel and display it
+            pnlContent.Controls.Add(childForm);
+            childForm.Show();
         }
 
         private void btnHistory_Click(object sender, EventArgs e)
