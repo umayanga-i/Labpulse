@@ -28,257 +28,309 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(studentDashboard));
-            linkLabel1 = new LinkLabel();
-            linkLabel2 = new LinkLabel();
-            pictureBox1 = new PictureBox();
-            panel1 = new Panel();
-            textBox1 = new TextBox();
+            pnlSidebar = new Panel();
+            lblBrand = new Label();
             label1 = new Label();
-            pictureBox2 = new PictureBox();
-            menuStrip1 = new MenuStrip();
-            backToolStripMenuItem = new ToolStripMenuItem();
-            menuToolStripMenuItem = new ToolStripMenuItem();
-            menuToolStripMenuItem1 = new ToolStripMenuItem();
-            catelogToolStripMenuItem = new ToolStripMenuItem();
-            rulesRegulationsToolStripMenuItem = new ToolStripMenuItem();
-            historyToolStripMenuItem = new ToolStripMenuItem();
-            aboutUsToolStripMenuItem = new ToolStripMenuItem();
-            panel2 = new Panel();
-            button1 = new Button();
+            btnCatalog = new Button();
+            btnReservation = new Button();
+            btnHistory = new Button();
+            btnRules = new Button();
+            btnProfile = new Button();
+            textBox1 = new TextBox();
             textBox2 = new TextBox();
+            textBox3 = new TextBox();
+            textBox4 = new TextBox();
+            textBox5 = new TextBox();
+            button1 = new Button();
+            textBox6 = new TextBox();
+            pnlHeader = new Panel();
             label2 = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            menuStrip1.SuspendLayout();
+            pnlContent = new Panel();
+            pnlSidebar.SuspendLayout();
+            pnlHeader.SuspendLayout();
             SuspendLayout();
             // 
-            // linkLabel1
+            // pnlSidebar
             // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.LinkColor = Color.Red;
-            linkLabel1.Location = new Point(1302, 14);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(62, 20);
-            linkLabel1.TabIndex = 0;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Log Out";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            pnlSidebar.BackColor = Color.FromArgb(30, 41, 59);
+            pnlSidebar.Controls.Add(textBox6);
+            pnlSidebar.Controls.Add(button1);
+            pnlSidebar.Controls.Add(textBox5);
+            pnlSidebar.Controls.Add(textBox4);
+            pnlSidebar.Controls.Add(textBox3);
+            pnlSidebar.Controls.Add(textBox2);
+            pnlSidebar.Controls.Add(textBox1);
+            pnlSidebar.Controls.Add(btnProfile);
+            pnlSidebar.Controls.Add(btnRules);
+            pnlSidebar.Controls.Add(btnHistory);
+            pnlSidebar.Controls.Add(btnReservation);
+            pnlSidebar.Controls.Add(btnCatalog);
+            pnlSidebar.Controls.Add(label1);
+            pnlSidebar.Controls.Add(lblBrand);
+            pnlSidebar.Dock = DockStyle.Left;
+            pnlSidebar.Location = new Point(0, 0);
+            pnlSidebar.Name = "pnlSidebar";
+            pnlSidebar.Size = new Size(260, 673);
+            pnlSidebar.TabIndex = 0;
             // 
-            // linkLabel2
+            // lblBrand
             // 
-            linkLabel2.AutoSize = true;
-            linkLabel2.BackColor = Color.FromArgb(64, 64, 64);
-            linkLabel2.LinkColor = Color.Black;
-            linkLabel2.Location = new Point(1409, 14);
-            linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new Size(52, 20);
-            linkLabel2.TabIndex = 1;
-            linkLabel2.TabStop = true;
-            linkLabel2.Text = "Profile";
-            linkLabel2.LinkClicked += linkLabel2_LinkClicked;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(1390, 14);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(22, 23);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(64, 64, 64);
-            panel1.Controls.Add(textBox1);
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(pictureBox2);
-            panel1.Controls.Add(linkLabel1);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(linkLabel2);
-            panel1.Location = new Point(12, 39);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1482, 119);
-            panel1.TabIndex = 3;
-            // 
-            // textBox1
-            // 
-            textBox1.BackColor = Color.FromArgb(64, 64, 64);
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Arial Rounded MT Bold", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.ForeColor = Color.FromArgb(255, 224, 192);
-            textBox1.Location = new Point(204, 55);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(477, 32);
-            textBox1.TabIndex = 5;
-            textBox1.TextChanged += textBox1_TextChanged;
+            lblBrand.AutoSize = true;
+            lblBrand.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblBrand.ForeColor = Color.FromArgb(56, 189, 248);
+            lblBrand.ImageAlign = ContentAlignment.MiddleRight;
+            lblBrand.Location = new Point(58, 24);
+            lblBrand.Name = "lblBrand";
+            lblBrand.Size = new Size(199, 31);
+            lblBrand.TabIndex = 0;
+            lblBrand.Text = "LabPulse Student";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(255, 192, 255);
-            label1.Location = new Point(189, 14);
+            label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(255, 128, 0);
+            label1.Location = new Point(0, 24);
             label1.Name = "label1";
-            label1.Size = new Size(503, 38);
-            label1.TabIndex = 4;
-            label1.Text = "Welcometo the Student Dashboard ! ";
-            label1.Click += label1_Click;
+            label1.Size = new Size(53, 31);
+            label1.TabIndex = 1;
+            label1.Text = "⚡ ";
             // 
-            // pictureBox2
+            // btnCatalog
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(18, 14);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(156, 84);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 3;
-            pictureBox2.TabStop = false;
+            btnCatalog.FlatAppearance.BorderSize = 0;
+            btnCatalog.FlatAppearance.MouseOverBackColor = Color.FromArgb(43, 57, 78);
+            btnCatalog.FlatStyle = FlatStyle.Flat;
+            btnCatalog.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCatalog.ForeColor = Color.FromArgb(148, 163, 184);
+            btnCatalog.Location = new Point(37, 94);
+            btnCatalog.Name = "btnCatalog";
+            btnCatalog.Size = new Size(220, 45);
+            btnCatalog.TabIndex = 2;
+            btnCatalog.Text = "Equipment Catalog";
+            btnCatalog.TextAlign = ContentAlignment.MiddleLeft;
+            btnCatalog.UseVisualStyleBackColor = true;
             // 
-            // menuStrip1
+            // btnReservation
             // 
-            menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { backToolStripMenuItem, menuToolStripMenuItem1, aboutUsToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1506, 28);
-            menuStrip1.TabIndex = 4;
-            menuStrip1.Text = "menuStrip1";
+            btnReservation.FlatAppearance.BorderSize = 0;
+            btnReservation.FlatAppearance.MouseOverBackColor = Color.FromArgb(43, 57, 78);
+            btnReservation.FlatStyle = FlatStyle.Flat;
+            btnReservation.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnReservation.ForeColor = Color.FromArgb(148, 163, 184);
+            btnReservation.Location = new Point(37, 177);
+            btnReservation.Name = "btnReservation";
+            btnReservation.Size = new Size(220, 45);
+            btnReservation.TabIndex = 3;
+            btnReservation.Text = "New Reservation";
+            btnReservation.TextAlign = ContentAlignment.MiddleLeft;
+            btnReservation.UseVisualStyleBackColor = true;
             // 
-            // backToolStripMenuItem
+            // btnHistory
             // 
-            backToolStripMenuItem.BackColor = Color.FromArgb(192, 255, 192);
-            backToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { menuToolStripMenuItem });
-            backToolStripMenuItem.Name = "backToolStripMenuItem";
-            backToolStripMenuItem.Size = new Size(54, 24);
-            backToolStripMenuItem.Text = "Back";
+            btnHistory.FlatAppearance.BorderSize = 0;
+            btnHistory.FlatAppearance.MouseOverBackColor = Color.FromArgb(43, 57, 78);
+            btnHistory.FlatStyle = FlatStyle.Flat;
+            btnHistory.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnHistory.ForeColor = Color.FromArgb(148, 163, 184);
+            btnHistory.Location = new Point(37, 254);
+            btnHistory.Name = "btnHistory";
+            btnHistory.Size = new Size(220, 45);
+            btnHistory.TabIndex = 4;
+            btnHistory.Text = "Booking History";
+            btnHistory.TextAlign = ContentAlignment.MiddleLeft;
+            btnHistory.UseVisualStyleBackColor = true;
             // 
-            // menuToolStripMenuItem
+            // btnRules
             // 
-            menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            menuToolStripMenuItem.Size = new Size(129, 26);
-            menuToolStripMenuItem.Text = "Menu";
+            btnRules.FlatAppearance.BorderSize = 0;
+            btnRules.FlatAppearance.MouseOverBackColor = Color.FromArgb(43, 57, 78);
+            btnRules.FlatStyle = FlatStyle.Flat;
+            btnRules.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnRules.ForeColor = Color.FromArgb(148, 163, 184);
+            btnRules.Location = new Point(37, 343);
+            btnRules.Name = "btnRules";
+            btnRules.Size = new Size(220, 45);
+            btnRules.TabIndex = 5;
+            btnRules.Text = "Lab Rules and Times";
+            btnRules.TextAlign = ContentAlignment.MiddleLeft;
+            btnRules.UseVisualStyleBackColor = true;
             // 
-            // menuToolStripMenuItem1
+            // btnProfile
             // 
-            menuToolStripMenuItem1.BackColor = Color.FromArgb(192, 255, 192);
-            menuToolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { catelogToolStripMenuItem, rulesRegulationsToolStripMenuItem, historyToolStripMenuItem });
-            menuToolStripMenuItem1.Name = "menuToolStripMenuItem1";
-            menuToolStripMenuItem1.Size = new Size(60, 24);
-            menuToolStripMenuItem1.Text = "Menu";
+            btnProfile.FlatAppearance.BorderSize = 0;
+            btnProfile.FlatAppearance.MouseOverBackColor = Color.FromArgb(43, 57, 78);
+            btnProfile.FlatStyle = FlatStyle.Flat;
+            btnProfile.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnProfile.ForeColor = Color.FromArgb(148, 163, 184);
+            btnProfile.Location = new Point(37, 433);
+            btnProfile.Name = "btnProfile";
+            btnProfile.Size = new Size(220, 45);
+            btnProfile.TabIndex = 6;
+            btnProfile.Text = "Profile Settings";
+            btnProfile.TextAlign = ContentAlignment.MiddleLeft;
+            btnProfile.UseVisualStyleBackColor = true;
             // 
-            // catelogToolStripMenuItem
+            // textBox1
             // 
-            catelogToolStripMenuItem.Name = "catelogToolStripMenuItem";
-            catelogToolStripMenuItem.Size = new Size(213, 26);
-            catelogToolStripMenuItem.Text = "Catelog";
-            // 
-            // rulesRegulationsToolStripMenuItem
-            // 
-            rulesRegulationsToolStripMenuItem.Name = "rulesRegulationsToolStripMenuItem";
-            rulesRegulationsToolStripMenuItem.Size = new Size(213, 26);
-            rulesRegulationsToolStripMenuItem.Text = "Rules & Regulations";
-            // 
-            // historyToolStripMenuItem
-            // 
-            historyToolStripMenuItem.Name = "historyToolStripMenuItem";
-            historyToolStripMenuItem.Size = new Size(213, 26);
-            historyToolStripMenuItem.Text = "History";
-            // 
-            // aboutUsToolStripMenuItem
-            // 
-            aboutUsToolStripMenuItem.BackColor = Color.FromArgb(192, 255, 192);
-            aboutUsToolStripMenuItem.Name = "aboutUsToolStripMenuItem";
-            aboutUsToolStripMenuItem.Size = new Size(84, 24);
-            aboutUsToolStripMenuItem.Text = "About Us";
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.Navy;
-            panel2.Location = new Point(12, 214);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1482, 530);
-            panel2.TabIndex = 5;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(128, 255, 128);
-            button1.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(1302, 164);
-            button1.Name = "button1";
-            button1.Size = new Size(110, 44);
-            button1.TabIndex = 6;
-            button1.Text = "SEARCH";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            textBox1.BackColor = Color.FromArgb(30, 41, 59);
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Font = new Font("Segoe UI Emoji", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox1.ForeColor = Color.White;
+            textBox1.Location = new Point(3, 99);
+            textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
+            textBox1.Size = new Size(38, 31);
+            textBox1.TabIndex = 1;
+            textBox1.Text = "🔬";
             // 
             // textBox2
             // 
-            textBox2.BackColor = SystemColors.InactiveCaption;
-            textBox2.Cursor = Cursors.IBeam;
-            textBox2.Location = new Point(1062, 164);
-            textBox2.Multiline = true;
+            textBox2.BackColor = Color.FromArgb(30, 41, 59);
+            textBox2.BorderStyle = BorderStyle.None;
+            textBox2.Font = new Font("Segoe UI Emoji", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox2.ForeColor = Color.FromArgb(192, 255, 255);
+            textBox2.Location = new Point(3, 182);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(234, 44);
+            textBox2.ReadOnly = true;
+            textBox2.Size = new Size(38, 31);
             textBox2.TabIndex = 7;
+            textBox2.Text = "📅";
+            // 
+            // textBox3
+            // 
+            textBox3.BackColor = Color.FromArgb(30, 41, 59);
+            textBox3.BorderStyle = BorderStyle.None;
+            textBox3.Font = new Font("Segoe UI Emoji", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox3.ForeColor = Color.FromArgb(255, 255, 128);
+            textBox3.Location = new Point(0, 259);
+            textBox3.Name = "textBox3";
+            textBox3.ReadOnly = true;
+            textBox3.Size = new Size(38, 31);
+            textBox3.TabIndex = 8;
+            textBox3.Text = "📜";
+            // 
+            // textBox4
+            // 
+            textBox4.BackColor = Color.FromArgb(30, 41, 59);
+            textBox4.BorderStyle = BorderStyle.None;
+            textBox4.Font = new Font("Segoe UI Emoji", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox4.ForeColor = Color.Silver;
+            textBox4.Location = new Point(0, 348);
+            textBox4.Name = "textBox4";
+            textBox4.ReadOnly = true;
+            textBox4.Size = new Size(38, 31);
+            textBox4.TabIndex = 9;
+            textBox4.Text = "📋";
+            // 
+            // textBox5
+            // 
+            textBox5.BackColor = Color.FromArgb(30, 41, 59);
+            textBox5.BorderStyle = BorderStyle.None;
+            textBox5.Font = new Font("Segoe UI Emoji", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox5.ForeColor = Color.FromArgb(0, 0, 64);
+            textBox5.Location = new Point(3, 438);
+            textBox5.Name = "textBox5";
+            textBox5.ReadOnly = true;
+            textBox5.Size = new Size(38, 31);
+            textBox5.TabIndex = 10;
+            textBox5.Text = "👤";
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(30, 41, 59);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(50, 30, 40);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.FromArgb(248, 113, 113);
+            button1.Location = new Point(37, 513);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 32);
+            button1.TabIndex = 1;
+            button1.Text = "Log Out";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // textBox6
+            // 
+            textBox6.BackColor = Color.FromArgb(30, 41, 59);
+            textBox6.BorderStyle = BorderStyle.None;
+            textBox6.Font = new Font("Segoe UI Emoji", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox6.ForeColor = Color.FromArgb(255, 192, 128);
+            textBox6.Location = new Point(3, 514);
+            textBox6.Name = "textBox6";
+            textBox6.ReadOnly = true;
+            textBox6.Size = new Size(38, 31);
+            textBox6.TabIndex = 11;
+            textBox6.Text = "🚪";
+            // 
+            // pnlHeader
+            // 
+            pnlHeader.BackColor = Color.FromArgb(30, 41, 59);
+            pnlHeader.Controls.Add(label2);
+            pnlHeader.Dock = DockStyle.Top;
+            pnlHeader.Location = new Point(260, 0);
+            pnlHeader.Name = "pnlHeader";
+            pnlHeader.Size = new Size(1002, 60);
+            pnlHeader.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe Print", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(824, 170);
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(20, 18);
             label2.Name = "label2";
-            label2.Size = new Size(232, 30);
-            label2.TabIndex = 8;
-            label2.Text = "Search Equipment Here :";
+            label2.Size = new Size(243, 28);
+            label2.TabIndex = 0;
+            label2.Text = "Student Self-Service Portal";
+            // 
+            // pnlContent
+            // 
+            pnlContent.Dock = DockStyle.Fill;
+            pnlContent.Location = new Point(260, 60);
+            pnlContent.Name = "pnlContent";
+            pnlContent.Size = new Size(1002, 613);
+            pnlContent.TabIndex = 2;
             // 
             // studentDashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1506, 756);
-            Controls.Add(label2);
-            Controls.Add(textBox2);
-            Controls.Add(button1);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
-            Controls.Add(menuStrip1);
-            MainMenuStrip = menuStrip1;
+            BackColor = Color.FromArgb(15, 23, 42);
+            ClientSize = new Size(1262, 673);
+            Controls.Add(pnlContent);
+            Controls.Add(pnlHeader);
+            Controls.Add(pnlSidebar);
             Name = "studentDashboard";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "studentDashboard";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
+            pnlSidebar.ResumeLayout(false);
+            pnlSidebar.PerformLayout();
+            pnlHeader.ResumeLayout(false);
+            pnlHeader.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private LinkLabel linkLabel1;
-        private LinkLabel linkLabel2;
-        private PictureBox pictureBox1;
-        private Panel panel1;
-        private PictureBox pictureBox2;
+        private Panel pnlSidebar;
+        private Label lblBrand;
         private Label label1;
+        private Button btnCatalog;
+        private Button btnProfile;
+        private Button btnRules;
+        private Button btnHistory;
+        private Button btnReservation;
         private TextBox textBox1;
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem backToolStripMenuItem;
-        private ToolStripMenuItem menuToolStripMenuItem;
-        private ToolStripMenuItem menuToolStripMenuItem1;
-        private ToolStripMenuItem catelogToolStripMenuItem;
-        private ToolStripMenuItem aboutUsToolStripMenuItem;
-        private ToolStripMenuItem rulesRegulationsToolStripMenuItem;
-        private ToolStripMenuItem historyToolStripMenuItem;
-        private Panel panel2;
-        private Button button1;
+        private TextBox textBox5;
+        private TextBox textBox4;
+        private TextBox textBox3;
         private TextBox textBox2;
+        private Button button1;
+        private TextBox textBox6;
+        private Panel pnlHeader;
         private Label label2;
+        private Panel pnlContent;
     }
 }
