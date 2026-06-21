@@ -45,19 +45,11 @@
             button5 = new Button();
             button3 = new Button();
             button2 = new Button();
-            menuStrip1 = new MenuStrip();
-            backToolStripMenuItem = new ToolStripMenuItem();
-            menuToolStripMenuItem = new ToolStripMenuItem();
-            equipmentRegistryToolStripMenuItem = new ToolStripMenuItem();
-            userControlPanelToolStripMenuItem = new ToolStripMenuItem();
-            systemAnalyticsToolStripMenuItem = new ToolStripMenuItem();
-            aboutUsToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
-            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // linkLabel1
@@ -77,7 +69,7 @@
             linkLabel2.AutoSize = true;
             linkLabel2.BackColor = Color.FromArgb(64, 64, 64);
             linkLabel2.LinkColor = Color.White;
-            linkLabel2.Location = new Point(1317, 16);
+            linkLabel2.Location = new Point(1338, 16);
             linkLabel2.Name = "linkLabel2";
             linkLabel2.Size = new Size(52, 20);
             linkLabel2.TabIndex = 1;
@@ -88,7 +80,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(1288, 16);
+            pictureBox1.Location = new Point(1300, 16);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(32, 29);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -148,7 +140,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Historic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(128, 255, 255);
-            label1.Location = new Point(212, 16);
+            label1.Location = new Point(224, 16);
             label1.Name = "label1";
             label1.Size = new Size(472, 41);
             label1.TabIndex = 3;
@@ -251,54 +243,6 @@
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
-            // menuStrip1
-            // 
-            menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { backToolStripMenuItem, menuToolStripMenuItem, aboutUsToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1506, 28);
-            menuStrip1.TabIndex = 5;
-            menuStrip1.Text = "menuStrip1";
-            // 
-            // backToolStripMenuItem
-            // 
-            backToolStripMenuItem.Name = "backToolStripMenuItem";
-            backToolStripMenuItem.Size = new Size(54, 24);
-            backToolStripMenuItem.Text = "Back";
-            // 
-            // menuToolStripMenuItem
-            // 
-            menuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { equipmentRegistryToolStripMenuItem, userControlPanelToolStripMenuItem, systemAnalyticsToolStripMenuItem });
-            menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            menuToolStripMenuItem.Size = new Size(60, 24);
-            menuToolStripMenuItem.Text = "Menu";
-            // 
-            // equipmentRegistryToolStripMenuItem
-            // 
-            equipmentRegistryToolStripMenuItem.Name = "equipmentRegistryToolStripMenuItem";
-            equipmentRegistryToolStripMenuItem.Size = new Size(221, 26);
-            equipmentRegistryToolStripMenuItem.Text = "Equipment Registry";
-            // 
-            // userControlPanelToolStripMenuItem
-            // 
-            userControlPanelToolStripMenuItem.Name = "userControlPanelToolStripMenuItem";
-            userControlPanelToolStripMenuItem.Size = new Size(221, 26);
-            userControlPanelToolStripMenuItem.Text = "User Control Panel";
-            // 
-            // systemAnalyticsToolStripMenuItem
-            // 
-            systemAnalyticsToolStripMenuItem.Name = "systemAnalyticsToolStripMenuItem";
-            systemAnalyticsToolStripMenuItem.Size = new Size(221, 26);
-            systemAnalyticsToolStripMenuItem.Text = "System Analytics";
-            systemAnalyticsToolStripMenuItem.Click += systemAnalyticsToolStripMenuItem_Click;
-            // 
-            // aboutUsToolStripMenuItem
-            // 
-            aboutUsToolStripMenuItem.Name = "aboutUsToolStripMenuItem";
-            aboutUsToolStripMenuItem.Size = new Size(84, 24);
-            aboutUsToolStripMenuItem.Text = "About Us";
-            // 
             // adminDashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -306,20 +250,16 @@
             ClientSize = new Size(1506, 756);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Controls.Add(menuStrip1);
-            MainMenuStrip = menuStrip1;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "adminDashboard";
-            Text = "adminDashboard";
+            Text = "Admin Dashboard";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -336,13 +276,6 @@
         private Button button2;
         private DateTimePicker dateTimePicker1;
         private Button button5;
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem backToolStripMenuItem;
-        private ToolStripMenuItem menuToolStripMenuItem;
-        private ToolStripMenuItem aboutUsToolStripMenuItem;
-        private ToolStripMenuItem equipmentRegistryToolStripMenuItem;
-        private ToolStripMenuItem userControlPanelToolStripMenuItem;
-        private ToolStripMenuItem systemAnalyticsToolStripMenuItem;
         private Panel panel3;
         private Button button4;
         private Button button1;

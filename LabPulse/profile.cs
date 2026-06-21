@@ -69,6 +69,11 @@ namespace LabPulse
             // 3. Close the profile page itself
             this.Close();
         }
+
+        private void profile_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
