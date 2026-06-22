@@ -56,7 +56,7 @@ namespace LabPulse
                                 // Pass the retrieved name into the dashboard constructor
                                 if (userRole == "student")
                                 {
-                                    studentDashboard studentDash = new studentDashboard(dbName);
+                                    studentDashboard studentDash = GetStudentDash(dbName);
                                     studentDash.Show();
                                 }
                                 else if (userRole == "staff")
@@ -85,7 +85,11 @@ namespace LabPulse
                 }
             }
         }
-        
+
+        private static studentDashboard GetStudentDash(string dbName)
+        {
+            return new studentDashboard(dbName);
+        }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
