@@ -11,7 +11,10 @@ namespace LabPulse
 {
     public partial class studentDashboard : Form
     {
+        private string connectionString = "Server=localhost;Database=labpulse_db;Uid=root;Pwd=;";
         private string currentUserName;
+        private int currentUserID = 0;
+
         public studentDashboard()
         {
             InitializeComponent();
@@ -20,12 +23,39 @@ namespace LabPulse
         {
             InitializeComponent();
             currentUserName = userName;
+            if (!string.IsNullOrEmpty(currentUserName))
+            {
+                currentUserID = FetchUserID(currentUserName);
+            }
         }
 
+        private int FetchUserID(string name)
+        {
+            string query = "SELECT UserID FROM User WHERE Name = @name AND Role = 'student' LIMIT 1";
+            using (MySql.Data.MySqlClient.MySqlConnection conn = new MySql.Data.MySqlClient.MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    using (MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@name", name);
+                        object result = cmd.ExecuteScalar();
+                        if (result != null && result != DBNull.Value)
+                            return Convert.ToInt32(result);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error resolving student session: " + ex.Message);
+                }
+            }
+            return 0;
+        }
 
+        
         private void DisplaySubForm(Form childForm)
         {
-            // 1. If a form is already showing in the workspace panel, close it to free up memory
             if (pnlContent.Controls.Count > 0)
             {
                 Form currentForm = pnlContent.Controls[0] as Form;
@@ -48,7 +78,10 @@ namespace LabPulse
             childForm.Show();
         }
 
-
+        /// <summary>
+        /// Form Load event execution flow.
+        /// Runs automatically the moment the studentDashboard finishes initial rendering.
+        /// </summary>
         private void studentDashboard_Load(object sender, EventArgs e)
         {
             DisplaySubForm(new FrmEquipmentCatalog());
@@ -71,7 +104,12 @@ namespace LabPulse
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            DisplaySubForm(new profile(1));
+            if (currentUserID == 0)
+            {
+                MessageBox.Show("Unable to load profile: user session not found. Please log in again.", "Session Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            DisplaySubForm(new profile(currentUserID));
 
         }
 
@@ -86,8 +124,6 @@ namespace LabPulse
 
             if (result == DialogResult.Yes)
             {
-                login loginForm = new login();
-                loginForm.Show();
                 this.Close();
             }
         }
@@ -95,12 +131,6 @@ namespace LabPulse
         private void btnReservation_Click(object sender, EventArgs e)
         {
             DisplaySubForm(new reservation());
-
-        }
-
-        private void studentDashboard_Load_1(object sender, EventArgs e)
-        {
-            DisplaySubForm(new FrmEquipmentCatalog());
 
         }
     }
