@@ -31,14 +31,11 @@ namespace LabPulse
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(profile));
             pictureusertype = new PictureBox();
-            linkLabel2 = new LinkLabel();
             panel1 = new Panel();
             label5 = new Label();
             lblBrand = new Label();
             lblname = new Label();
             lblRol = new Label();
-            linkLabel1 = new LinkLabel();
-            pictureBox2 = new PictureBox();
             checkBoxEdit = new CheckBox();
             label1 = new Label();
             label2 = new Label();
@@ -56,29 +53,17 @@ namespace LabPulse
             checkBoxShowPassword = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)pictureusertype).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // pictureusertype
             // 
             pictureusertype.Image = (Image)resources.GetObject("pictureusertype.Image");
-            pictureusertype.Location = new Point(61, 186);
+            pictureusertype.Location = new Point(61, 111);
             pictureusertype.Name = "pictureusertype";
             pictureusertype.Size = new Size(117, 148);
             pictureusertype.SizeMode = PictureBoxSizeMode.Zoom;
             pictureusertype.TabIndex = 0;
             pictureusertype.TabStop = false;
-            // 
-            // linkLabel2
-            // 
-            linkLabel2.AutoSize = true;
-            linkLabel2.Location = new Point(592, 24);
-            linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new Size(86, 20);
-            linkLabel2.TabIndex = 4;
-            linkLabel2.TabStop = true;
-            linkLabel2.Text = "Home Page";
-            linkLabel2.LinkClicked += linkLabel2_LinkClicked;
             // 
             // panel1
             // 
@@ -88,11 +73,9 @@ namespace LabPulse
             panel1.Controls.Add(lblname);
             panel1.Controls.Add(lblRol);
             panel1.Controls.Add(pictureusertype);
-            panel1.Controls.Add(linkLabel1);
-            panel1.Controls.Add(pictureBox2);
             panel1.Location = new Point(2, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(280, 537);
+            panel1.Size = new Size(280, 1095);
             panel1.TabIndex = 5;
             // 
             // label5
@@ -123,7 +106,7 @@ namespace LabPulse
             lblname.AutoSize = true;
             lblname.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             lblname.ForeColor = Color.White;
-            lblname.Location = new Point(82, 353);
+            lblname.Location = new Point(82, 278);
             lblname.Name = "lblname";
             lblname.Size = new Size(68, 28);
             lblname.TabIndex = 15;
@@ -140,29 +123,6 @@ namespace LabPulse
             lblRol.Size = new Size(61, 31);
             lblRol.TabIndex = 7;
             lblRol.Text = "Role";
-            // 
-            // linkLabel1
-            // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.LinkColor = Color.White;
-            linkLabel1.Location = new Point(43, 502);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(40, 20);
-            linkLabel1.TabIndex = 1;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Back";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(26, 505);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(20, 17);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 2;
-            pictureBox2.TabStop = false;
-            pictureBox2.Click += pictureBox2_Click;
             // 
             // checkBoxEdit
             // 
@@ -300,7 +260,7 @@ namespace LabPulse
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(685, 537);
+            ClientSize = new Size(695, 571);
             Controls.Add(checkBoxShowPassword);
             Controls.Add(txtcompass);
             Controls.Add(txtnewpass);
@@ -317,7 +277,6 @@ namespace LabPulse
             Controls.Add(label1);
             Controls.Add(checkBoxEdit);
             Controls.Add(panel1);
-            Controls.Add(linkLabel2);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "profile";
@@ -327,7 +286,6 @@ namespace LabPulse
             ((System.ComponentModel.ISupportInitialize)pictureusertype).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -335,7 +293,6 @@ namespace LabPulse
         #endregion
 
         private PictureBox pictureusertype;
-        private LinkLabel linkLabel2;
         private Panel panel1;
         private CheckBox checkBoxEdit;
         private Label label1;
@@ -356,8 +313,6 @@ namespace LabPulse
         private CheckBox checkBoxShowPassword;
         private Label label5;
         private Label lblBrand;
-        private LinkLabel linkLabel1;
-        private PictureBox pictureBox2;
     }
 
 }

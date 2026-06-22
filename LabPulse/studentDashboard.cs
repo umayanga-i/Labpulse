@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using ZstdSharp.Unsafe;
 
 namespace LabPulse
 {
@@ -77,7 +78,8 @@ namespace LabPulse
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            DisplaySubForm(new FrmProfileSettings());
+            DisplaySubForm(new profile(1));
+
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -93,6 +95,12 @@ namespace LabPulse
             {
                 this.Close();
             }
+        }
+
+        private void btnReservation_Click(object sender, EventArgs e)
+        {
+            DisplaySubForm(new reservation());
+
         }
     }
 }

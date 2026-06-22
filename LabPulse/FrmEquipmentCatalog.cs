@@ -19,6 +19,9 @@ namespace LabPulse
         {
         }
 
+        private void flpCatalog_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }

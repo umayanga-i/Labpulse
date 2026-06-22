@@ -159,7 +159,7 @@
             richTextBox2.Location = new Point(3, 87);
             richTextBox2.Name = "richTextBox2";
             richTextBox2.ReadOnly = true;
-            richTextBox2.Size = new Size(444, 220);
+            richTextBox2.Size = new Size(444, 298);
             richTextBox2.TabIndex = 6;
             richTextBox2.Text = resources.GetString("richTextBox2.Text");
             // 
@@ -212,7 +212,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 23, 42);
-            ClientSize = new Size(934, 450);
+            ClientSize = new Size(964, 524);
             Controls.Add(pnlRightCard);
             Controls.Add(pnlLeftCard);
             Controls.Add(label1);

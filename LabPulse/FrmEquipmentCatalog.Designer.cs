@@ -122,10 +122,12 @@
             flpCatalog.Controls.Add(panel6);
             flpCatalog.Controls.Add(panel7);
             flpCatalog.Controls.Add(panel8);
-            flpCatalog.Location = new Point(20, 84);
+            flpCatalog.Dock = DockStyle.Fill;
+            flpCatalog.Location = new Point(20, 20);
             flpCatalog.Name = "flpCatalog";
-            flpCatalog.Size = new Size(760, 346);
+            flpCatalog.Size = new Size(863, 616);
             flpCatalog.TabIndex = 2;
+            flpCatalog.Paint += flpCatalog_Paint;
             // 
             // pnlCardTemplate
             // 
@@ -508,7 +510,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 23, 42);
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(903, 656);
             Controls.Add(flpCatalog);
             Controls.Add(label2);
             Controls.Add(label1);

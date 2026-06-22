@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reservation));
-            panel1 = new Panel();
-            pictureBox1 = new PictureBox();
             label1 = new Label();
             textBox1 = new TextBox();
             label2 = new Label();
@@ -50,30 +47,7 @@
             label9 = new Label();
             dateTimePicker1 = new DateTimePicker();
             linkLabel2 = new LinkLabel();
-            linkLabel1 = new LinkLabel();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.Purple;
-            panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(linkLabel1);
-            panel1.Location = new Point(-1, -2);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1183, 63);
-            panel1.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(11, 19);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(27, 25);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -259,24 +233,11 @@
             linkLabel2.Text = "* Look at the Equipment ID Here";
             linkLabel2.LinkClicked += linkLabel2_LinkClicked;
             // 
-            // linkLabel1
-            // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Font = new Font("MS Reference Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            linkLabel1.LinkColor = Color.White;
-            linkLabel1.Location = new Point(44, 19);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(183, 23);
-            linkLabel1.TabIndex = 0;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Student Dashboard";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
-            // 
             // reservation
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(64, 0, 64);
+            BackColor = Color.FromArgb(15, 23, 42);
             ClientSize = new Size(1182, 553);
             Controls.Add(linkLabel2);
             Controls.Add(dateTimePicker1);
@@ -297,21 +258,14 @@
             Controls.Add(label2);
             Controls.Add(textBox1);
             Controls.Add(label1);
-            Controls.Add(panel1);
             Name = "reservation";
             Text = "reservation";
             Load += reservation_Load_1;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Panel panel1;
-        private PictureBox pictureBox1;
         private Label label1;
         private TextBox textBox1;
         private Label label2;
@@ -331,6 +285,5 @@
         private Label label9;
         private DateTimePicker dateTimePicker1;
         private LinkLabel linkLabel2;
-        private LinkLabel linkLabel1;
     }
 }
