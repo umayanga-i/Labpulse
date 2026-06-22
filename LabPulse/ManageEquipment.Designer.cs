@@ -86,6 +86,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
             label2.Location = new Point(20, 48);
             label2.Name = "label2";
             label2.Size = new Size(157, 25);
@@ -94,7 +95,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.FromArgb(128, 255, 128);
+            panel2.BackColor = Color.FromArgb(15, 23, 42);
             panel2.BackgroundImageLayout = ImageLayout.None;
             panel2.Controls.Add(button4);
             panel2.Controls.Add(button3);
@@ -116,7 +117,7 @@
             // 
             // button4
             // 
-            button4.BackColor = Color.FromArgb(192, 0, 192);
+            button4.BackColor = Color.RoyalBlue;
             button4.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button4.Location = new Point(529, 557);
             button4.Name = "button4";
@@ -128,7 +129,7 @@
             // 
             // button3
             // 
-            button3.BackColor = Color.FromArgb(192, 0, 192);
+            button3.BackColor = Color.RoyalBlue;
             button3.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.Location = new Point(53, 557);
             button3.Name = "button3";
@@ -140,7 +141,7 @@
             // 
             // button2
             // 
-            button2.BackColor = Color.FromArgb(192, 0, 192);
+            button2.BackColor = Color.RoyalBlue;
             button2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.Location = new Point(292, 557);
             button2.Name = "button2";
@@ -154,6 +155,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.White;
             label6.Location = new Point(20, 11);
             label6.Name = "label6";
             label6.Size = new Size(249, 23);
@@ -164,6 +166,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.White;
             label5.Location = new Point(32, 260);
             label5.Name = "label5";
             label5.Size = new Size(311, 23);
@@ -172,6 +175,7 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = Color.LightSlateGray;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(32, 292);
             dataGridView1.Name = "dataGridView1";
@@ -181,7 +185,7 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.FromArgb(192, 0, 192);
+            button1.BackColor = Color.RoyalBlue;
             button1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.Location = new Point(277, 194);
             button1.Name = "button1";
@@ -195,6 +199,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.White;
             label4.Location = new Point(431, 48);
             label4.Name = "label4";
             label4.Size = new Size(126, 25);
@@ -203,6 +208,7 @@
             // 
             // textBox3
             // 
+            textBox3.BackColor = Color.LightSlateGray;
             textBox3.Location = new Point(416, 76);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(288, 27);
@@ -210,6 +216,7 @@
             // 
             // textBox2
             // 
+            textBox2.BackColor = Color.LightSlateGray;
             textBox2.Location = new Point(20, 148);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(288, 27);
@@ -217,6 +224,7 @@
             // 
             // textBox1
             // 
+            textBox1.BackColor = Color.LightSlateGray;
             textBox1.Location = new Point(20, 76);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(288, 27);
@@ -226,6 +234,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
             label3.Location = new Point(20, 120);
             label3.Name = "label3";
             label3.Size = new Size(164, 25);
@@ -247,6 +256,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(15, 23, 42);
             ClientSize = new Size(800, 733);
             Controls.Add(linkLabel2);
             Controls.Add(panel2);
@@ -254,6 +264,7 @@
             Controls.Add(panel1);
             Name = "ManageEquipment";
             Text = "ManageEquipment";
+            Load += ManageEquipment_Load_1;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);

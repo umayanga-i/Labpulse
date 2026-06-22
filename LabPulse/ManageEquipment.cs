@@ -30,21 +30,19 @@ namespace LabPulse
             this.dashboardInstance = callingForm;
         }
 
-        // Runs automatically when the screen opens to pull existing items
         private void ManageEquipment_Load(object sender, EventArgs e)
         {
-            // Left blank intentionally on startup as per your flow requirements
-            // Grid fills only when button3 (Load) is triggered
+            
         }
 
-        
+
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (dashboardInstance != null)
             {
-                dashboardInstance.Show(); // Show the hidden dashboard again
-                this.Close();             // Close this form completely to free memory
+                dashboardInstance.Show(); /
+                this.Close();             
             }
         }
 
@@ -85,7 +83,6 @@ namespace LabPulse
             {
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
-                    // FIXED: Using matching database column names 'Name' and '`Remaining Quantity`'
                     string query = "INSERT INTO Equipment (EquipmentID, Name, `Remaining Quantity`) VALUES (@ID, @Name, @Qty)";
 
                     using (MySqlCommand command = new MySqlCommand(query, connection))
@@ -129,7 +126,6 @@ namespace LabPulse
             {
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
-                    // FIXED: Using matching database column names 'Name' and '`Remaining Quantity`'
                     string query = "SELECT EquipmentID, Name, `Remaining Quantity` FROM Equipment";
                     dataAdapter = new MySqlDataAdapter(query, connection);
                     MySqlCommandBuilder commandBuilder = new MySqlCommandBuilder(dataAdapter);
@@ -156,18 +152,14 @@ namespace LabPulse
             {
                 if (dataAdapter != null && equipmentTable != null)
                 {
-                    // Create a fresh, active connection to handle the update pipeline
                     using (MySqlConnection connection = new MySqlConnection(connectionString))
                     {
-                        // Attach the active connection to the adapter's core command channels
                         dataAdapter.SelectCommand.Connection = connection;
 
-                        // Re-bind the builder to the adapter so it updates its tracking commands
                         MySqlCommandBuilder commandBuilder = new MySqlCommandBuilder(dataAdapter);
 
                         connection.Open();
 
-                        // Sync grid view changes safely upstream
                         dataAdapter.Update(equipmentTable);
 
                         MessageBox.Show("All adjustments, deletions, and additions made in the grid have been saved to the database!",
@@ -184,6 +176,11 @@ namespace LabPulse
             {
                 MessageBox.Show($"Failed to sync alterations: {ex.Message}", "Sync Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void ManageEquipment_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
