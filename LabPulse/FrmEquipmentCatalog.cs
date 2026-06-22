@@ -14,5 +14,11 @@ namespace LabPulse
         {
             InitializeComponent();
         }
+
+        private void FrmEquipmentCatalog_Load(object sender, EventArgs e)
+        {
+        }
+
+
     }
 }
