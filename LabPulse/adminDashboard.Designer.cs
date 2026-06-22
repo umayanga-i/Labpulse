@@ -142,9 +142,9 @@
             label1.ForeColor = Color.FromArgb(128, 255, 255);
             label1.Location = new Point(224, 16);
             label1.Name = "label1";
-            label1.Size = new Size(472, 41);
+            label1.Size = new Size(444, 41);
             label1.TabIndex = 3;
-            label1.Text = "Welcome to Admin Dashboard !";
+            label1.Text = "Welcome to Staff Dashboard !";
             // 
             // panel2
             // 
@@ -229,6 +229,7 @@
             button3.TabIndex = 2;
             button3.Text = "Returns / Check Ins";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -252,7 +253,7 @@
             Controls.Add(panel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "adminDashboard";
-            Text = "Admin Dashboard";
+            Text = "Staff Dashboard";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

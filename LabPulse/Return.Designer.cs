@@ -74,10 +74,10 @@
             linkLabel1.LinkColor = Color.White;
             linkLabel1.Location = new Point(44, 19);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(170, 23);
+            linkLabel1.Size = new Size(155, 23);
             linkLabel1.TabIndex = 0;
             linkLabel1.TabStop = true;
-            linkLabel1.Text = "Admin Dashboard";
+            linkLabel1.Text = "Staff Dashboard";
             linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // label1

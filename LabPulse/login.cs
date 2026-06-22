@@ -61,7 +61,7 @@ namespace LabPulse
                                 }
                                 else if (userRole == "staff")
                                 {
-                                    staffDashboard staffDash = new staffDashboard(dbName);
+                                    adminDashboard staffDash = new adminDashboard(dbName);
                                     staffDash.Show();
                                 }
                                 else if (userRole == "admin")

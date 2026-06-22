@@ -33,22 +33,22 @@
             pictureBox1 = new PictureBox();
             linkLabel1 = new LinkLabel();
             panel2 = new Panel();
+            dataGridView1 = new DataGridView();
+            textBox6 = new TextBox();
+            textBox5 = new TextBox();
+            textBox4 = new TextBox();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
+            label7 = new Label();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            button2 = new Button();
+            button1 = new Button();
             textBox1 = new TextBox();
             label2 = new Label();
             label1 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            dataGridView1 = new DataGridView();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -82,10 +82,10 @@
             linkLabel1.LinkColor = Color.White;
             linkLabel1.Location = new Point(44, 19);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(170, 23);
+            linkLabel1.Size = new Size(155, 23);
             linkLabel1.TabIndex = 0;
             linkLabel1.TabStop = true;
-            linkLabel1.Text = "Admin Dashboard";
+            linkLabel1.Text = "Staff Dashboard";
             linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // panel2
@@ -111,6 +111,125 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1116, 558);
             panel2.TabIndex = 1;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(169, 297);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(786, 188);
+            dataGridView1.TabIndex = 15;
+            dataGridView1.CellClick += dataGridView1_CellClick;
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(833, 152);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(217, 27);
+            textBox6.TabIndex = 14;
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(668, 152);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(100, 27);
+            textBox5.TabIndex = 13;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(419, 152);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(204, 27);
+            textBox4.TabIndex = 12;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(169, 152);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(204, 27);
+            textBox3.TabIndex = 11;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(54, 152);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(81, 27);
+            textBox2.TabIndex = 10;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.ForeColor = SystemColors.Control;
+            label7.Location = new Point(833, 129);
+            label7.Name = "label7";
+            label7.Size = new Size(158, 20);
+            label7.TabIndex = 9;
+            label7.Text = "Allocation Date (Start)";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.ForeColor = SystemColors.Control;
+            label6.Location = new Point(668, 129);
+            label6.Name = "label6";
+            label6.Size = new Size(100, 20);
+            label6.TabIndex = 8;
+            label6.Text = "Equipment ID";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.ForeColor = SystemColors.Control;
+            label5.Location = new Point(419, 129);
+            label5.Name = "label5";
+            label5.Size = new Size(125, 20);
+            label5.TabIndex = 7;
+            label5.Text = "Equipment Name";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.ForeColor = SystemColors.Control;
+            label4.Location = new Point(169, 129);
+            label4.Name = "label4";
+            label4.Size = new Size(104, 20);
+            label4.TabIndex = 6;
+            label4.Text = "Student Name";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.ForeColor = SystemColors.Control;
+            label3.Location = new Point(56, 129);
+            label3.Name = "label3";
+            label3.Size = new Size(79, 20);
+            label3.TabIndex = 5;
+            label3.Text = "Student ID";
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Cyan;
+            button2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Location = new Point(334, 214);
+            button2.Name = "button2";
+            button2.Size = new Size(149, 29);
+            button2.TabIndex = 4;
+            button2.Text = "Refresh";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Cyan;
+            button1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(84, 214);
+            button1.Name = "button1";
+            button1.Size = new Size(216, 29);
+            button1.TabIndex = 3;
+            button1.Text = "Approve Issue Request";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // textBox1
             // 
@@ -145,125 +264,6 @@
             label1.Size = new Size(525, 38);
             label1.TabIndex = 0;
             label1.Text = "Process Resource Allocation Check-Out";
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.Cyan;
-            button1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(84, 214);
-            button1.Name = "button1";
-            button1.Size = new Size(216, 29);
-            button1.TabIndex = 3;
-            button1.Text = "Approve Issue Request";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.Cyan;
-            button2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(334, 214);
-            button2.Name = "button2";
-            button2.Size = new Size(149, 29);
-            button2.TabIndex = 4;
-            button2.Text = "Refresh";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.ForeColor = SystemColors.Control;
-            label3.Location = new Point(56, 129);
-            label3.Name = "label3";
-            label3.Size = new Size(79, 20);
-            label3.TabIndex = 5;
-            label3.Text = "Student ID";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.ForeColor = SystemColors.Control;
-            label4.Location = new Point(169, 129);
-            label4.Name = "label4";
-            label4.Size = new Size(104, 20);
-            label4.TabIndex = 6;
-            label4.Text = "Student Name";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.ForeColor = SystemColors.Control;
-            label5.Location = new Point(419, 129);
-            label5.Name = "label5";
-            label5.Size = new Size(125, 20);
-            label5.TabIndex = 7;
-            label5.Text = "Equipment Name";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.ForeColor = SystemColors.Control;
-            label6.Location = new Point(668, 129);
-            label6.Name = "label6";
-            label6.Size = new Size(100, 20);
-            label6.TabIndex = 8;
-            label6.Text = "Equipment ID";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.ForeColor = SystemColors.Control;
-            label7.Location = new Point(833, 129);
-            label7.Name = "label7";
-            label7.Size = new Size(158, 20);
-            label7.TabIndex = 9;
-            label7.Text = "Allocation Date (Start)";
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(54, 152);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(81, 27);
-            textBox2.TabIndex = 10;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(169, 152);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(204, 27);
-            textBox3.TabIndex = 11;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(419, 152);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(204, 27);
-            textBox4.TabIndex = 12;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(668, 152);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(100, 27);
-            textBox5.TabIndex = 13;
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(833, 152);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(217, 27);
-            textBox6.TabIndex = 14;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(169, 297);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(786, 188);
-            dataGridView1.TabIndex = 15;
-            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // Issue
             // 
