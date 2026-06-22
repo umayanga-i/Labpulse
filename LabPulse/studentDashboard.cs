@@ -10,27 +10,12 @@ namespace LabPulse
 {
     public partial class studentDashboard : Form
     {
-<<<<<<< HEAD
-        private string dbName;
-
-=======
         private string currentUserName;
->>>>>>> c5902abdd39b68c0a647b96bbf3eb36dc2298382
         public studentDashboard()
         {
             InitializeComponent();
         }
-<<<<<<< HEAD
-
-        public studentDashboard(string dbName)
-        {
-            this.dbName = dbName;
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-=======
         public studentDashboard(string userName)
->>>>>>> c5902abdd39b68c0a647b96bbf3eb36dc2298382
         {
             InitializeComponent();
             currentUserName = userName;
@@ -92,7 +77,8 @@ namespace LabPulse
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            DisplaySubForm(new FrmProfileSettings());
+            DisplaySubForm(new profile(1));
+
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
