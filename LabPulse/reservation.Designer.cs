@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reservation));
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
+            linkLabel1 = new LinkLabel();
             label1 = new Label();
             textBox1 = new TextBox();
             label2 = new Label();
@@ -50,7 +51,6 @@
             label9 = new Label();
             dateTimePicker1 = new DateTimePicker();
             linkLabel2 = new LinkLabel();
-            linkLabel1 = new LinkLabel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -74,6 +74,19 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.Font = new Font("MS Reference Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            linkLabel1.LinkColor = Color.White;
+            linkLabel1.Location = new Point(44, 19);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(183, 23);
+            linkLabel1.TabIndex = 0;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Student Dashboard";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // label1
             // 
@@ -259,25 +272,12 @@
             linkLabel2.Text = "* Look at the Equipment ID Here";
             linkLabel2.LinkClicked += linkLabel2_LinkClicked;
             // 
-            // linkLabel1
-            // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Font = new Font("MS Reference Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            linkLabel1.LinkColor = Color.White;
-            linkLabel1.Location = new Point(44, 19);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(183, 23);
-            linkLabel1.TabIndex = 0;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Student Dashboard";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
-            // 
             // reservation
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(64, 0, 64);
-            ClientSize = new Size(1182, 553);
+            ClientSize = new Size(984, 563);
             Controls.Add(linkLabel2);
             Controls.Add(dateTimePicker1);
             Controls.Add(textBox4);

@@ -229,6 +229,7 @@
             btnReservation.Text = "New Reservation";
             btnReservation.TextAlign = ContentAlignment.MiddleLeft;
             btnReservation.UseVisualStyleBackColor = true;
+            btnReservation.Click += btnReservation_Click;
             // 
             // btnCatalog
             // 

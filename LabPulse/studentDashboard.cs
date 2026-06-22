@@ -95,5 +95,10 @@ namespace LabPulse
                 this.Close();
             }
         }
+
+        private void btnReservation_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
