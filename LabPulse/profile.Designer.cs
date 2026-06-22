@@ -100,7 +100,7 @@ namespace LabPulse
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.FromArgb(255, 128, 0);
-            label5.Location = new Point(10, 21);
+            label5.Location = new Point(11, 32);
             label5.Name = "label5";
             label5.Size = new Size(53, 31);
             label5.TabIndex = 17;
@@ -112,7 +112,7 @@ namespace LabPulse
             lblBrand.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblBrand.ForeColor = Color.FromArgb(56, 189, 248);
             lblBrand.ImageAlign = ContentAlignment.MiddleRight;
-            lblBrand.Location = new Point(68, 21);
+            lblBrand.Location = new Point(69, 32);
             lblBrand.Name = "lblBrand";
             lblBrand.Size = new Size(109, 31);
             lblBrand.TabIndex = 16;
@@ -123,7 +123,7 @@ namespace LabPulse
             lblname.AutoSize = true;
             lblname.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             lblname.ForeColor = Color.White;
-            lblname.Location = new Point(94, 356);
+            lblname.Location = new Point(82, 353);
             lblname.Name = "lblname";
             lblname.Size = new Size(68, 28);
             lblname.TabIndex = 15;
@@ -135,7 +135,7 @@ namespace LabPulse
             lblRol.AutoSize = true;
             lblRol.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             lblRol.ForeColor = Color.FromArgb(56, 189, 248);
-            lblRol.Location = new Point(174, 21);
+            lblRol.Location = new Point(175, 32);
             lblRol.Name = "lblRol";
             lblRol.Size = new Size(61, 31);
             lblRol.TabIndex = 7;
@@ -275,7 +275,6 @@ namespace LabPulse
             txtnewpass.PasswordChar = '*';
             txtnewpass.Size = new Size(247, 27);
             txtnewpass.TabIndex = 17;
-            txtnewpass.TextChanged += textBox5_TextChanged;
             // 
             // txtcompass
             // 

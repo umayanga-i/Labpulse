@@ -6,313 +6,202 @@ namespace LabPulse
 {
     public partial class profile : Form
     {
-        // -------------------------------------------------------
-        // Fields
-        // -------------------------------------------------------
-        private readonly string connectionString = "Server=localhost;Database=labpulse_db;Uid=root;Pwd=;";
+        string connectionString = "Server=localhost;Database=labpulse_db;Uid=root;Pwd=;";
+        int userID;
 
-        /// <summary>Primary key of the student whose profile is being viewed/edited.</summary>
-        private int userID = 0;
-
-        // -------------------------------------------------------
-        // Constructors
-        // -------------------------------------------------------
-
-        /// <summary>
-        /// Primary constructor — called by studentDashboard.
-        /// Receives the logged-in student's UserID.
-        /// </summary>
         public profile(int id)
         {
             InitializeComponent();
             userID = id;
         }
 
-        /// <summary>Parameterless constructor kept for designer compatibility.</summary>
-        public profile()
-        {
-            InitializeComponent();
-        }
-
-        // -------------------------------------------------------
-        // Form Load — wired by designer: Load += profile_Load
-        // Sets initial UI state, then fetches data from the DB.
-        // -------------------------------------------------------
         private void profile_Load(object sender, EventArgs e)
         {
-            // --- Initial read-only state ---
-            txtName.ReadOnly  = true;
+            txtName.ReadOnly = true;
             txtemail.ReadOnly = true;
             txtphone.ReadOnly = true;
 
-            // --- Hide password section and Save button ---
-            txtnewpass.Visible           = false;
-            txtcompass.Visible           = false;
-            newpassLab.Visible           = false;
-            ConfpassLab.Visible          = false;
+            txtnewpass.Visible = false;
+            txtcompass.Visible = false;
+            newpassLab.Visible = false;
+            ConfpassLab.Visible = false;
             checkBoxShowPassword.Visible = false;
-            btnsubmit.Visible            = false;
+            btnsubmit.Visible = false;
 
-            // --- Mask password characters ---
             txtnewpass.PasswordChar = '*';
             txtcompass.PasswordChar = '*';
 
-            // --- Populate fields from database ---
             LoadUserData();
         }
 
-        // -------------------------------------------------------
-        // Load Name, Email, PhoneNumber from the User table
-        // -------------------------------------------------------
         private void LoadUserData()
         {
-            if (userID == 0)
-            {
-                MessageBox.Show(
-                    "No user session found. Please log in again.",
-                    "Session Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-                return;
-            }
-
-            const string query =
-                "SELECT Name, Email, PhoneNumber, Role FROM User WHERE UserID = @UserID";
+            string query = "SELECT Name, Email, PhoneNo, Role FROM User WHERE UserID=@id";
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 try
                 {
                     conn.Open();
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@id", userID);
+
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.Read())
                     {
-                        cmd.Parameters.AddWithValue("@UserID", userID);
+                        txtName.Text = reader["Name"].ToString();
+                        txtemail.Text = reader["Email"].ToString();
+                        txtphone.Text = reader["PhoneNo"].ToString();
 
-                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        lblname.Text = reader["Name"].ToString();
+                        //lblRol.Text = reader["Role"].ToString();
+                        string role = reader["Role"].ToString();
+
+                        if (role == "student")
                         {
-                            if (reader.Read())
-                            {
-                                txtName.Text  = reader["Name"].ToString();
-                                txtemail.Text = reader["Email"].ToString();
-                                txtphone.Text = reader["PhoneNumber"].ToString();
-
-                                lblname.Text = reader["Name"].ToString();
-                                lblRol.Text  = reader["Role"].ToString();
-                            }
-                            else
-                            {
-                                MessageBox.Show(
-                                    "User record not found in the database.",
-                                    "Error",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Error);
-                            }
+                            lblRol.Text = "Student";
+                        }
+                        else if (role == "admin")
+                        {
+                            lblRol.Text = "Admin";
+                        }
+                        else if (role == "staff")
+                        {
+                            lblRol.Text = "Staff";
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(
-                        "Error loading profile: " + ex.Message,
-                        "Database Error",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message);
                 }
             }
         }
 
-        // -------------------------------------------------------
-        // checkBoxEdit — toggle editing mode
-        // -------------------------------------------------------
         private void checkBoxEdit_CheckedChanged(object sender, EventArgs e)
         {
-            bool editing = checkBoxEdit.Checked;
+            bool edit = checkBoxEdit.Checked;
 
-            // Toggle read-only on main fields
-            txtName.ReadOnly  = !editing;
-            txtemail.ReadOnly = !editing;
-            txtphone.ReadOnly = !editing;
+            txtName.ReadOnly = !edit;
+            txtemail.ReadOnly = !edit;
+            txtphone.ReadOnly = !edit;
 
-            // Show / hide password section
-            txtnewpass.Visible           = editing;
-            txtcompass.Visible           = editing;
-            newpassLab.Visible           = editing;
-            ConfpassLab.Visible          = editing;
-            checkBoxShowPassword.Visible = editing;
+            txtnewpass.Visible = edit;
+            txtcompass.Visible = edit;
+            newpassLab.Visible = edit;
+            ConfpassLab.Visible = edit;
+            checkBoxShowPassword.Visible = edit;
+            btnsubmit.Visible = edit;
 
-            // Show / hide Save button
-            btnsubmit.Visible = editing;
-
-            // Clear password fields when leaving edit mode
-            if (!editing)
+            if (!edit)
             {
-                txtnewpass.Text = string.Empty;
-                txtcompass.Text = string.Empty;
+                txtnewpass.Clear();
+                txtcompass.Clear();
             }
         }
 
-        // -------------------------------------------------------
-        // checkBoxShowPassword — reveal / mask password text
-        // -------------------------------------------------------
         private void checkBoxShowPassword_CheckedChanged(object sender, EventArgs e)
         {
-            char mask = checkBoxShowPassword.Checked ? '\0' : '*';
-            txtnewpass.PasswordChar = mask;
-            txtcompass.PasswordChar = mask;
+            if (checkBoxShowPassword.Checked)
+            {
+                txtnewpass.PasswordChar = '\0';
+                txtcompass.PasswordChar = '\0';
+            }
+            else
+            {
+                txtnewpass.PasswordChar = '*';
+                txtcompass.PasswordChar = '*';
+            }
         }
 
-        // -------------------------------------------------------
-        // btnsubmit — Save Changes
-        // -------------------------------------------------------
         private void btnsubmit_Click(object sender, EventArgs e)
         {
-            // --- Field validation ---
-            if (string.IsNullOrWhiteSpace(txtName.Text))
+            if (txtName.Text.Trim() == "" || txtemail.Text.Trim() == "")
             {
-                MessageBox.Show("Name is required.", "Validation Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Fill all required fields");
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(txtemail.Text))
+            if (txtnewpass.Text != txtcompass.Text)
             {
-                MessageBox.Show("Email is required.", "Validation Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Passwords do not match");
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(txtphone.Text))
+            string query;
+
+            if (txtnewpass.Text.Trim() == "")
             {
-                MessageBox.Show("Phone Number is required.", "Validation Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                query = "UPDATE User SET Name=@name, Email=@email, PhoneNo=@phone WHERE UserID=@id";
             }
-
-            // --- Determine whether a password change is requested ---
-            bool changingPassword = !string.IsNullOrWhiteSpace(txtnewpass.Text) ||
-                                    !string.IsNullOrWhiteSpace(txtcompass.Text);
-
-            if (changingPassword)
+            else
             {
-                if (string.IsNullOrWhiteSpace(txtnewpass.Text))
-                {
-                    MessageBox.Show("New Password cannot be empty.", "Validation Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                if (txtnewpass.Text != txtcompass.Text)
-                {
-                    MessageBox.Show(
-                        "New Password and Confirm Password do not match.",
-                        "Validation Error",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
-                    return;
-                }
+                query = "UPDATE User SET Name=@name, Email=@email, PhoneNo=@phone, Password=@pass WHERE UserID=@id";
             }
-
-            // --- Build the appropriate UPDATE query ---
-            string query = changingPassword
-                ? @"UPDATE User
-                    SET Name        = @Name,
-                        Email       = @Email,
-                        PhoneNumber = @Phone,
-                        Password    = @Password
-                    WHERE UserID = @UserID"
-                : @"UPDATE User
-                    SET Name        = @Name,
-                        Email       = @Email,
-                        PhoneNumber = @Phone
-                    WHERE UserID = @UserID";
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 try
                 {
                     conn.Open();
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                    cmd.Parameters.AddWithValue("@name", txtName.Text);
+                    cmd.Parameters.AddWithValue("@email", txtemail.Text);
+                    cmd.Parameters.AddWithValue("@phone", txtphone.Text);
+                    cmd.Parameters.AddWithValue("@id", userID);
+
+                    if (txtnewpass.Text.Trim() != "")
                     {
-                        cmd.Parameters.AddWithValue("@Name",   txtName.Text.Trim());
-                        cmd.Parameters.AddWithValue("@Email",  txtemail.Text.Trim());
-                        cmd.Parameters.AddWithValue("@Phone",  txtphone.Text.Trim());
-                        cmd.Parameters.AddWithValue("@UserID", userID);
+                        cmd.Parameters.AddWithValue("@pass", txtnewpass.Text);
+                    }
 
-                        if (changingPassword)
-                            cmd.Parameters.AddWithValue("@Password", txtnewpass.Text);
+                    int rows = cmd.ExecuteNonQuery();
 
-                        int rowsAffected = cmd.ExecuteNonQuery();
+                    if (rows > 0)
+                    {
+                        MessageBox.Show("Profile Updated Successfully");
 
-                        if (rowsAffected > 0)
-                        {
-                            MessageBox.Show(
-                                "Profile updated successfully!",
-                                "Success",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Information);
+                        lblname.Text = txtName.Text;
 
-                            // Update sidebar display name
-                            lblname.Text = txtName.Text.Trim();
-
-                            // Return to read-only mode
-                            checkBoxEdit.Checked = false;
-                        }
-                        else
-                        {
-                            MessageBox.Show(
-                                "No changes were saved. Please try again.",
-                                "Update Failed",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Warning);
-                        }
+                        checkBoxEdit.Checked = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Update Failed");
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(
-                        "Error saving profile: " + ex.Message,
-                        "Database Error",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message);
                 }
             }
         }
 
-        // -------------------------------------------------------
-        // textBox5_TextChanged — required by designer event binding
-        // -------------------------------------------------------
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-            // Intentionally empty — control bound in designer
-        }
-
-        // -------------------------------------------------------
-        // linkLabel1 — "Back" → close profile (dashboard re-shows)
-        // -------------------------------------------------------
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            // studentDashboard wired FormClosed to Show() itself
             this.Close();
         }
 
-        // -------------------------------------------------------
-        // linkLabel2 — "Home Page" → navigate to welcome screen
-        // -------------------------------------------------------
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Form1 welcomeScreen = new Form1();
-            welcomeScreen.Show();
+            Form1 f = new Form1();
+            f.Show();
             this.Close();
         }
 
-        // -------------------------------------------------------
-        // pictureBox2 click — same as Home Page / logout
-        // -------------------------------------------------------
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Form1 welcomeScreen = new Form1();
-            welcomeScreen.Show();
+            Form1 f = new Form1();
+            f.Show();
             this.Close();
+        }
+         private void txtnewpass_TextChanged (object sender, EventArgs e)
+        {
+         
         }
     }
 }
