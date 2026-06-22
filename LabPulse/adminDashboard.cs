@@ -1,8 +1,8 @@
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using MySql.Data.MySqlClient;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
@@ -39,8 +39,8 @@ namespace LabPulse
         public adminDashboard(string userName)
         {
             InitializeComponent();
-            currentUserName  = userName ?? string.Empty;
-            textBox1.Text    = currentUserName;
+            currentUserName = userName ?? string.Empty;
+            textBox1.Text = currentUserName;
             textBox1.ReadOnly = true;
 
             if (!string.IsNullOrEmpty(currentUserName))
@@ -54,9 +54,9 @@ namespace LabPulse
         public adminDashboard(string userName, int userID)
         {
             InitializeComponent();
-            currentUserName  = userName ?? string.Empty;
-            currentUserID    = userID;
-            textBox1.Text    = currentUserName;
+            currentUserName = userName ?? string.Empty;
+            currentUserID = userID;
+            textBox1.Text = currentUserName;
             textBox1.ReadOnly = true;
         }
 
@@ -167,14 +167,15 @@ namespace LabPulse
             this.Hide();
         }
 
-<<<<<<< Updated upstream
+
         // -------------------------------------------------------
         // systemAnalyticsToolStripMenuItem_Click
         // -------------------------------------------------------
         private void systemAnalyticsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             // Reserved for future implementation
-=======
+        }
         private void button3_Click(object sender, EventArgs e)
         {
             // Pass 'this' (the current adminDashboard instance) to the Return form constructor
@@ -185,7 +186,7 @@ namespace LabPulse
 
             // Hide the current dashboard to keep the workspace clean
             this.Hide();
->>>>>>> Stashed changes
+
         }
     }
 }
