@@ -32,6 +32,11 @@ namespace LabPulse
             //InitializeComponent();
         }
 
+        private void InitializeComponent()
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// Called by login.cs — receives the staff member's name and
         /// resolves the UserID from the database automatically.
