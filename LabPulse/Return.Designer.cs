@@ -49,7 +49,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.Purple;
+            panel1.BackColor = Color.FromArgb(15, 23, 42);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(linkLabel1);
             panel1.Location = new Point(-1, 0);
@@ -66,6 +66,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // linkLabel1
             // 
@@ -208,7 +209,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(64, 0, 64);
+            BackColor = Color.FromArgb(15, 23, 42);
             ClientSize = new Size(1182, 553);
             Controls.Add(checkBox4);
             Controls.Add(checkBox3);

@@ -182,10 +182,8 @@ namespace LabPulse
         // --- LINK LABEL 2: GO TO CATALOG VIEW ---
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            // Instantiates your equipment browsing list screen matrix view window
-            Catelog catalogScreen = new Catelog(this.dashboardInstance);
-            catalogScreen.Show();
-            this.Close();
+         FrmEquipmentCatalog catalog = new FrmEquipmentCatalog();
+            catalog.Show();
         }
 
         private void reservation_FormClosed(object sender, FormClosedEventArgs e)

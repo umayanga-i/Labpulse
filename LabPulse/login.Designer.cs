@@ -55,7 +55,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.White;
+            panel1.BackColor = Color.WhiteSmoke;
             panel1.Controls.Add(pictureBox5);
             panel1.Controls.Add(pictureBox4);
             panel1.Controls.Add(pictureBox3);
@@ -199,12 +199,13 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI Semibold", 12.8F, FontStyle.Bold);
             label1.Location = new Point(189, 118);
             label1.Name = "label1";
-            label1.Size = new Size(141, 25);
+            label1.Size = new Size(170, 30);
             label1.TabIndex = 2;
             label1.Text = "Welcome Back !";
+            label1.Click += label1_Click;
             // 
             // pictureBox2
             // 
@@ -233,6 +234,7 @@
             BackColor = Color.FromArgb(0, 0, 64);
             ClientSize = new Size(1064, 704);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "login";
             Text = "login";
             panel1.ResumeLayout(false);

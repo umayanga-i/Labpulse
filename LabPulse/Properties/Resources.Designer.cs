@@ -59,5 +59,25 @@ namespace LabPulse.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ESP32_Dev_kit {
+            get {
+                object obj = ResourceManager.GetObject("ESP32_Dev_kit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ESP32_Dev_kit1 {
+            get {
+                object obj = ResourceManager.GetObject("ESP32_Dev_kit1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

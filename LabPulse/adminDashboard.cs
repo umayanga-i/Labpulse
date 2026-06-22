@@ -167,14 +167,13 @@ namespace LabPulse
             this.Hide();
         }
 
-<<<<<<< Updated upstream
         // -------------------------------------------------------
         // systemAnalyticsToolStripMenuItem_Click
         // -------------------------------------------------------
         private void systemAnalyticsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Reserved for future implementation
-=======
+        }
         private void button3_Click(object sender, EventArgs e)
         {
             // Pass 'this' (the current adminDashboard instance) to the Return form constructor
@@ -185,7 +184,6 @@ namespace LabPulse
 
             // Hide the current dashboard to keep the workspace clean
             this.Hide();
->>>>>>> Stashed changes
         }
     }
 }

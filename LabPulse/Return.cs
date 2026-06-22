@@ -213,5 +213,21 @@ namespace LabPulse
         private void checkBox2_CheckedChanged(object sender, EventArgs e) { }
         private void checkBox3_CheckedChanged(object sender, EventArgs e) { }
         private void checkBox4_CheckedChanged(object sender, EventArgs e) { }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (this.dashboardInstance != null)
+            {
+                this.dashboardInstance.Show();
+                this.Close();
+            }
+            else
+            {
+                adminDashboard adminDash = (adminDashboard)Application.OpenForms["adminDashboard"];
+                if (adminDash != null) adminDash.Show();
+                else new adminDashboard().Show();
+                this.Close();
+            }
+        }
     }
 }

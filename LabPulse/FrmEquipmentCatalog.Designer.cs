@@ -164,7 +164,7 @@
             // pictureBox1
             // 
             pictureBox1.Dock = DockStyle.Top;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Image = Properties.Resources.ESP32_Dev_kit1;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(220, 150);
@@ -363,7 +363,7 @@
             label13.Name = "label13";
             label13.Size = new Size(200, 50);
             label13.TabIndex = 2;
-            label13.Text = "Red LED";
+            label13.Text = "Blue LED";
             // 
             // label14
             // 
@@ -406,7 +406,7 @@
             label15.Name = "label15";
             label15.Size = new Size(200, 50);
             label15.TabIndex = 2;
-            label15.Text = "Blue LED";
+            label15.Text = "Red LED";
             // 
             // label16
             // 
@@ -429,6 +429,7 @@
             pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox7.TabIndex = 0;
             pictureBox7.TabStop = false;
+            pictureBox7.Click += pictureBox7_Click;
             // 
             // panel7
             // 
@@ -493,6 +494,7 @@
             label20.Size = new Size(51, 25);
             label20.TabIndex = 1;
             label20.Text = "ID: 9";
+            label20.Click += label20_Click;
             // 
             // pictureBox9
             // 

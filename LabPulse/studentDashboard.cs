@@ -22,11 +22,7 @@ namespace LabPulse
             currentUserName = userName;
         }
 
-        /// <summary>
-        /// THE MASTER SWITCHING FUNCTION
-        /// Strips top-level borders from sub-forms and embeds them directly into the pnlContent container.
-        /// </summary>
-        /// <param name="childForm">The instance of the target inner form to load.</param>
+
         private void DisplaySubForm(Form childForm)
         {
             // 1. If a form is already showing in the workspace panel, close it to free up memory
@@ -52,10 +48,7 @@ namespace LabPulse
             childForm.Show();
         }
 
-        /// <summary>
-        /// Form Load event execution flow.
-        /// Runs automatically the moment the studentDashboard finishes initial rendering.
-        /// </summary>
+
         private void studentDashboard_Load(object sender, EventArgs e)
         {
             DisplaySubForm(new FrmEquipmentCatalog());
@@ -93,6 +86,8 @@ namespace LabPulse
 
             if (result == DialogResult.Yes)
             {
+                login loginForm = new login();
+                loginForm.Show();
                 this.Close();
             }
         }
@@ -100,6 +95,12 @@ namespace LabPulse
         private void btnReservation_Click(object sender, EventArgs e)
         {
             DisplaySubForm(new reservation());
+
+        }
+
+        private void studentDashboard_Load_1(object sender, EventArgs e)
+        {
+            DisplaySubForm(new FrmEquipmentCatalog());
 
         }
     }

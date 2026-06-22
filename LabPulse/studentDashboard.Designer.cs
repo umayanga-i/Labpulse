@@ -311,6 +311,7 @@
             Name = "studentDashboard";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "studentDashboard";
+            Load += studentDashboard_Load_1;
             pnlSidebar.ResumeLayout(false);
             pnlSidebar.PerformLayout();
             pnlHeader.ResumeLayout(false);

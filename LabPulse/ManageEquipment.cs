@@ -41,7 +41,7 @@ namespace LabPulse
         {
             if (dashboardInstance != null)
             {
-                dashboardInstance.Show(); /
+                dashboardInstance.Show(); 
                 this.Close();             
             }
         }

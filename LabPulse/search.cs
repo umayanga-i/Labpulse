@@ -76,5 +76,14 @@ namespace LabPulse
         {
             throw new NotImplementedException();
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            if (dashboardInstance != null)
+            {
+                dashboardInstance.Show(); // Show the student dashboard again
+                this.Close();             // Close this results form completely
+            }
+        }
     }
 }

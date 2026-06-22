@@ -29,7 +29,7 @@ namespace LabPulse
         /// <summary>Parameterless constructor kept for designer compatibility.</summary>
         public staffDashboard()
         {
-            InitializeComponent();
+            //InitializeComponent();
         }
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace LabPulse
         /// </summary>
         public staffDashboard(string? dbName)
         {
-            InitializeComponent();
+            //InitializeComponent();
             currentUserName = dbName ?? string.Empty;
 
             if (!string.IsNullOrEmpty(currentUserName))
@@ -51,7 +51,7 @@ namespace LabPulse
         /// </summary>
         public staffDashboard(string userName, int userID)
         {
-            InitializeComponent();
+            //InitializeComponent();
             currentUserName = userName ?? string.Empty;
             currentUserID   = userID;
         }
